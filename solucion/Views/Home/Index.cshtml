@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home | Job opportunities";
+}
+
+<div class="container-fluid " >
+    <div class="row" >
+        <div class="position-relative p-0 ">
+            <img src="~/images/fondo1.png" alt="n/a" style="width: 100%; height: 100vh;">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h1 class="text-center m-0" style="color: #fff;">Job opportunities</h1>
+                <div class="text-center ">
+                    <a asp-controller="Jobs" asp-action="Index" class="btn btn-primary m-3" style="width: 400px; box-shadow: 5px 5px 2px 0px #000;">See job offer</a>
+                    <a asp-controller="Jobs" asp-action="Create" class="btn btn-primary m-3" style="width: 400px; box-shadow: 5px 5px 2px 0px #000;">Create job offer</a>
+                    <a asp-controller="Employees" asp-action="Index" class="btn btn-success shadowm m-3" style="width: 400px; box-shadow: 5px 5px 2px 0px #000;">List employees</a>
+                    <a asp-controller="Employees" asp-action="Create" class="btn btn-success shadowm m-3" style="width: 400px; box-shadow: 5px 5px 2px 0px #000;">Register employees</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

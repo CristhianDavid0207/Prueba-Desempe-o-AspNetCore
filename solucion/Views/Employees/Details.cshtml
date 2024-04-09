@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Details | Employee";
+}
+
+@model Employee
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center m-4">Employee details / {names and last names of employee}</h1>
+        <div class="col-3">
+            <div class="card shadow" style="height: 93.5%;">
+                <div class="card-body text-center m-3">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src="~/images/home.png" alt="" style="width: 40px;" class="mb-2">
+                    </a>
+                    <a asp-controller="Employees" asp-action="Create" class="btn btn-outline-success shadow mb-3" style="width: 200px;">Register new employee</a>
+                    <a asp-controller="Employees" asp-action="Index" class="btn btn-outline-success shadow" style="width: 200px;">List employees</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card shadow mb-5">
+                <div class="card-body">
+                    <div class="text-center m-2 ">
+                        <img src="@Model.ProfilePicture">
+                    </div>
+                    <div class="text-center m-1">
+                        <h2>@Model.Names @Model.LastNames</h2>
+                        <p>@Model.Email</p>
+                        <hr>
+                    </div>
+                    <div class="d-inline-flex col-12">
+                        <p class="col-4"><b>Phone: </b>@Model.Phone</p>
+                        <p class="col-4"><b>Address: </b>@Model.Address</p>
+                        <p class="col-4"><b>BirthDate: </b>@Model.BirthDate</p>
+                    </div>
+                    <div class="d-inline-flex col-12">
+                        <p class="col-4"><b>Gender: </b>@Model.Gender</p>
+                        <p class="col-4"><b>CivilStatus: </b>@Model.CivilStatus</p>
+                        <p class="col-4"><b>Salary from: </b>@Model.Salary</p>
+                    </div>
+                    <div class="d-inline-flex col-12">
+                        <p class="col-4"><b>AcademicTitle: </b>@Model.AcademicTitle</p>
+                        <p class="col-4"><b>Languages: </b>@Model.Languages</p>
+                        <p class="col-4"><b>Area: </b>@Model.Area</p>
+                    </div>
+                    <div class="col-12">
+                        <p><b>About: </b></p>
+                        <p>@Model.About</p>
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-success shadow m-4 col-5" href="@Model.Cv">Download CV</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

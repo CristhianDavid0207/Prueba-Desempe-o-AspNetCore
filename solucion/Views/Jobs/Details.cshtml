@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Details | Job";
+}
+
+@model Job
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center m-4">Job details / {names and last names of Job}</h1>
+        <div class="col-3">
+            <div class="card shadow" style="height: 93.5%;">
+                <div class="card-body text-center m-3">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src="~/images/home.png" alt="" style="width: 40px;" class="mb-2">
+                    </a>
+                    <a asp-controller="Jobs" asp-action="Create" class="btn btn-outline-primary shadow mb-3" style="width: 200px;">Register new Job</a>
+                    <a asp-controller="Jobs" asp-action="Index" class="btn btn-outline-primary shadow" style="width: 200px;">List Jobs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card shadow mb-5">
+                <div class="card-body">
+                    <div class="m-2 ">
+                        <img src="@Model.LogoCompany" class="m-0 ms-1">
+                        <h2 class="m-0 ms-1">@Model.OfferTitle</h2>
+                        <p class="m-0 ms-1">@Model.NameCompany</p>
+                        <p class="m-0 ms-1">Salary: </b>@Model.Salary</p>
+                        <p class="m-1">Positions: @Model.Positions</p>
+                        <p class="m-1">Country: @Model.Country</p>
+                        <p class="m-1">Languages: @Model.Languages</p>
+                        <p class="m-2 ms-1"><b>Description:</b> <br>@Model.Description</p>
+
+                    </div>
+
+                    <a class="btn btn-outline-dark shadow m-4" asp-controller="Jobs" asp-action="Index" >Back</a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

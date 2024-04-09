@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "List | Jobs";
+}
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center m-4">List Jobs</h1>
+        <div class="col-3">
+            <div class="card shadow" style="height: 93.5%;">
+                <div class="card-body text-center m-3">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src="~/images/home.png" alt="" style="width: 40px;" class="mb-2">
+                    </a>
+                    <a asp-controller="Jobs" asp-action="Create" class="btn btn-outline-primary shadow mb-3" style="width: 200px;">Register new Job</a>
+                    <a asp-controller="Jobs" asp-action="Index" class="btn btn-outline-primary shadow" style="width: 200px;">List Jobs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card shadow mb-5">
+                <div class="card-body">
+                    <div class="col-12">
+                        <form asp-controller="Jobs" asp-action="Index" method="get" class="d-flex float-start mb-3">
+                            <input type="text" name="search" value="" class="form-control me-2 shadow" placeholder="Search">
+                            <button class="btn btn btn-outline-dark shadow">Search</button>
+
+                        </form>
+                    </div>
+
+                    <table class="table table-hover table-bordered align-middle">
+                        <tr class="text-center" style="background-color: rgb(190, 190, 190);">
+                            <th>Names</th>
+                            <th>LastNames</th>
+                            <th>Email</th>
+                            <th>About</th>
+                            <th>Actions</th>
+                        </tr>
+                        @foreach (var job in Model){
+                            <tr class="align-middle">
+                                <td>@job.NameCompany</td>
+                                <td>@job.OfferTitle</td>
+                                <td>@job.Description</td>
+                                <td>@job.Salary</td>
+                                <td>
+                                    <div class="d-inline-flex ">
+                                        <a class=" me-1 " asp-controller="Jobs" asp-action="Details" asp-route-id="@job.Id">Detail</a>
+                                        <a class="me-1 " asp-controller="Jobs" asp-action="Edit" asp-route-id="@job.Id">Edit</a>
+                                        <a class="me-1 " asp-controller="Jobs" asp-action="Delete" asp-route-id="@job.Id">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

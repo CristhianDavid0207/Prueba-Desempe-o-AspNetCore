@@ -1,0 +1,149 @@
+@{
+    ViewData["Title"] = "Create | Employee";
+}
+
+@model Employee
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center m-4">Create new employee</h1>
+        <div class="col-3">
+            <div class="card shadow" style="height: 93.5%;">
+                <div class="card-body text-center m-3">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src="~/images/home.png" alt="" style="width: 40px;" class="mb-2">
+                    </a>
+                    <a asp-controller="Employees" asp-action="Create" class="btn btn-outline-success shadow mb-3" style="width: 200px;">Register new employee</a>
+                    <a asp-controller="Employees" asp-action="Index" class="btn btn-outline-success shadow" style="width: 200px;">List employees</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="card shadow mb-5">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Employee information</h2>
+                    <form asp-controller="Employees" asp-action="Add" method="post" class="row" enctype="multipart/form-data">
+                        <div class="form-grup col-4" >
+                            <label asp-for="Names"></label><br>
+                            <input asp-for="Names" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="LastNames"></label><br>
+                            <input asp-for="LastNames" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="Email"></label><br>
+                            <input asp-for="Email" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="BirthDate"></label><br>
+                            <input asp-for="BirthDate" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="Gender"></label><br>
+                            <select name="option" class="form-control">
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>                    
+                            </select>
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="Phone"></label><br>
+                            <input asp-for="Phone" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="Address"></label><br>
+                            <input asp-for="Address" class="form-control">
+                        </div>
+
+                        
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="CivilStatus"></label><br>
+                            <select name="option" class="form-control">
+                                <option value="">Select civil status</option>
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>                    
+                                <option value="Free union">Free union</option>                    
+                                <option value="Separate">Separate</option>     
+                                <option value="Divorced">Divorced</option>     
+                                <option value="Widower">Widower</option> 
+                            </select>
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="Salary"></label><br>
+                            <input asp-for="Salary" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="AcademicTitle"></label><br>
+                            <input asp-for="AcademicTitle" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="Area"></label><br>
+                            <input asp-for="Area" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4 col-4">
+                            <label asp-for="Languages"></label><br>
+                            <input asp-for="Languages" class="form-control">
+                        </div>
+
+                        <div class="form-grup mb-4" >
+                            <label asp-for="About"></label><br>
+                            <textarea  asp-for="About" class="form-control" style="height: 90px;">
+                            </textarea>
+                        </div>
+
+
+                        <div class="form-grup mb-4 col-6">
+                            <label asp-for="ProfilePicture"></label><br>
+                            <input asp-for="ProfilePicture" type="file" class="form-control" name="imagen" id="ejemplo">
+                            <select name="ubicacion">
+                                <option value="">Add</option>
+                                <option value="0">Documents</option>
+                                <option value="1">Images</option>
+                                <option value="2">Uploads</option>
+                                <option value="3">Temps</option>
+                            </select>
+                        </div>
+
+                        <div class="form-grup mb-4 col-6">
+                            <label asp-for="Cv"></label><br>
+                            <input asp-for="Cv" type="file" class="form-control" name="imagen" id="ejemplo">
+                            <select name="ubicacion">
+                                <option value="">Add</option>
+                                <option value="0">Documents</option>
+                                <option value="1">Images</option>
+                                <option value="2">Uploads</option>
+                                <option value="3">Temps</option>
+                            </select>
+                        </div>
+
+                        <div class="">
+                            <button type="submit" class="btn btn-success text-center shadow form-control">Create new employee</button> 
+                        </div>
+                        
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
