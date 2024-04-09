@@ -17,7 +17,7 @@ namespace solucion.Controllers
         //LLamamos al contructor que unicializa los modelos
         public EmployeesController(PruebaContext context, HelperUploadFiles helperUpload ){
             _context = context;
-            this.helperUpload = helperUpload;
+            this.helperUpload = helperUpload; 
         }
 
 

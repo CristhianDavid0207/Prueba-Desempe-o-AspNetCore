@@ -16,9 +16,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-9">
-            <div class="card shadow mb-5">
-                <div class="card-body">
+        <div class="col-9 ">
+            <div class="card shadow mb-5 ">
+                <div class="card-body row">
                     <div class="col-12">
                         <form asp-controller="Employees" asp-action="Index" method="get" class="d-flex float-start mb-3">
                             <input type="text" name="search" value="" class="form-control me-2 shadow" placeholder="Search">
@@ -27,31 +27,35 @@
                         </form>
                     </div>
 
-                    <table class="table table-hover table-bordered align-middle">
-                        <tr class="text-center" style="background-color: rgb(190, 190, 190);">
-                            <th>Names</th>
-                            <th>LastNames</th>
-                            <th>Email</th>
-                            <th>About</th>
-                            <th>Actions</th>
-                        </tr>
-                        @foreach (var empoyee in Model){
-                            <tr class="align-middle">
-                                <td>@empoyee.Names</td>
-                                <td>@empoyee.LastNames</td>
-                                <td>@empoyee.Email</td>
-                                <td>@empoyee.About</td>
-                                <td>
-                                    <div class="d-inline-flex ">
-                                        <a class=" me-1 " asp-controller="Employees" asp-action="Details" asp-route-id="@empoyee.Id">Detail</a>
-                                        <a class="me-1 " asp-controller="Employees" asp-action="Edit" asp-route-id="@empoyee.Id">Edit</a>
-                                        <a class="me-1 " asp-controller="Employees" asp-action="Delete" asp-route-id="@empoyee.Id">Delete</a>
-                                    </div>
-                                </td>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered align-middle w-100">
+                            <tr class="text-center" style="background-color: rgb(190, 190, 190);">
+                                <th>Names</th>
+                                <th>LastNames</th>
+                                <th>Email</th>
+                                <th>About</th>
+                                <th>Actions</th>
                             </tr>
-                        }
+                            @foreach (var empoyee in Model){
+                                <tr class="align-middle">
+                                    <td>@empoyee.Names</td>
+                                    <td>@empoyee.LastNames</td>
+                                    <td>@empoyee.Email</td>
+                                    <td>@empoyee.About</td>
+                                    <td>
+                                        <div class="d-inline-flex ">
+                                            <a class=" me-1 " asp-controller="Employees" asp-action="Details" asp-route-id="@empoyee.Id">Detail</a>
+                                            <a class="me-1 " asp-controller="Employees" asp-action="Edit" asp-route-id="@empoyee.Id">Edit</a>
+                                            <a class="me-1 " asp-controller="Employees" asp-action="Delete" asp-route-id="@empoyee.Id">Delete</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
 
-                    </table>
+                        </table>
+
+                    </div>
+
                 </div>
 
             </div>

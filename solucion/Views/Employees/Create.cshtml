@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-        <h2 class="text-center m-4">Create new employee</h1>
+        <h2 class="text-center m-4">Create new employee</h2>
         <div class="col-3">
             <div class="card shadow" style="height: 93.5%;">
                 <div class="card-body text-center m-3">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-9">
+        <div class="col-9 ">
             <div class="card shadow mb-5">
                 <div class="card-body">
                     <h2 class="text-center mb-4">Employee information</h2>
@@ -45,7 +45,7 @@
 
                         <div class="form-grup mb-4 col-4">
                             <label asp-for="Gender"></label><br>
-                            <select name="option" class="form-control">
+                            <select asp-for="Gender" class="form-control">
                                 <option value="">Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>                    
@@ -65,7 +65,7 @@
                         
                         <div class="form-grup mb-4 col-4">
                             <label asp-for="CivilStatus"></label><br>
-                            <select name="option" class="form-control">
+                            <select asp-for="CivilStatus" class="form-control">
                                 <option value="">Select civil status</option>
                                 <option value="Single">Single</option>
                                 <option value="Married">Married</option>                    
