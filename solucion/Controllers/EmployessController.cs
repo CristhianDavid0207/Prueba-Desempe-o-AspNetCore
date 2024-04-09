@@ -68,7 +68,7 @@ namespace solucion.Controllers
                     break;
             }
 
-            empoyee.ProfilePicture = path;
+            empoyee.ProfilePicture = nombreImagen;
              
             _context.Employees.Add(empoyee);
             await _context.SaveChangesAsync();

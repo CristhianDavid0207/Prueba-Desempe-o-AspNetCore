@@ -68,7 +68,7 @@ namespace solucion.Controllers
                     break;
             }
 
-            job.LogoCompany = path;
+            job.LogoCompany = nombreImagen;
              
             _context.Jobs.Add(job);
             await _context.SaveChangesAsync();
